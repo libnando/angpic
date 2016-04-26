@@ -1,1 +1,1 @@
-angular.module('angpic',[]);
+angular.module('angpic',['myDirectives']);
