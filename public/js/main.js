@@ -1,1 +1,1 @@
-angular.module('angpic',['myDirectives']);
+angular.module('angpic',['myDirectives','ngAnimate']);
