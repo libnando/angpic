@@ -1,40 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-br" ng-app="angpic">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width">
-        <title>Ang Pic</title>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/effects.css">
-        <script src="js/lib/angular.min.js" ></script>
-         <script src="js/lib/angular-animate.min.js"></script>
-        
-        <script src="js/main.js" ></script>
-        <script src="js/controllers/fotos-controller.js" ></script>
-        <script src="js/directives/my-directives.js" ></script>
-    </head>
-    <body ng-controller="FotosController">
-        <div class="container">
-            
-            <div class="jumbotron">
-                <h1 class="text-center">Ang pic</h1>
-            </div>                        
-            
-            <div class="row">
-                <div class="col-md-12">
-                    <form>
-                        <input ng-model="filtro" ng-model-options="{debounce:500}" class="form-control" placeholder="Filtrar">
-                    </form>
-                </div>
-            </div>
-            
-            <div class="row">
-                <my-panel class="col-md-2 painel-animado" ng-repeat="foto in fotos | filter: filtro" titulo="{{foto.titulo}}">
-                    <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
-                </my-panel>
-            </div>    
-                        
-        </div>
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+    <meta name="viewport" content="width=device-width">
+    <title>Ang Pic</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/effects.css">
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/lib/angular-animate.min.js"></script>
+    <script src="js/lib/angular-route.min.js"></script>
+
+    <script src="js/main.js"></script>
+    <script src="js/controllers/pictures-controller.js"></script>
+    <script src="js/controllers/picture-controller.js"></script>
+    <script src="js/directives/my-directives.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <ng-view></ng-view>
+    </div>
+</body>
+
 </html>
