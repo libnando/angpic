@@ -2,6 +2,10 @@
     <h1 class="text-center">Ang pic</h1>
 </div>
 
+<p class="alert alert-info" ng-show="message.length">
+    {{message}}
+</p>
+
 <div class="row">
     <div class="col-md-12">
         <form>
@@ -25,5 +29,9 @@
 <div class="row">
     <my-panel class="col-md-2 painel-animado" ng-repeat="picture in pictures | filter : filter" titulo="{{picture.titulo}}">
         <img class="img-responsive center-block" src="{{picture.url}}" alt="{{picture.titulo}}">
+        
+         <a class="btn btn-primary btn-block" href="/pictures/edit/{{picture._id}}">Editar</a>
+        <button class="btn btn-danger btn-block" ng-click="remove(picture)">Remover</button>
+        
     </my-panel>
 </div>
